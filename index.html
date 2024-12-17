@@ -408,6 +408,37 @@
   </script>
   <script src="dist/fade_in.js"></script>
   <script src="dist/menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cursor = document.createElement('div');
+      cursor.className = 'fixed w-4 h-4 bg-white rounded-full pointer-events-none mix-blend-difference z-50 -translate-x-1/2 -translate-y-1/2';
+      document.body.appendChild(cursor);
+
+      const cursorGlow = document.createElement('div');
+      cursorGlow.className = 'fixed w-8 h-8 bg-white/20 rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-transform duration-200';
+      document.body.appendChild(cursorGlow);
+
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+      });
+
+      // Add hover effect to interactive elements
+      const interactiveElements = document.querySelectorAll('a, button, input, textarea');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+          cursorGlow.style.transform = 'translate(-50%, -50%) scale(2)';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+          cursorGlow.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
