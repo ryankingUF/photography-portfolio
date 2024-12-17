@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sophia Williams - Portfolio</title>
+  <title>Waldimir Calzadilla - Portfolio</title>
   <meta name="description"
-    content="Hello there, I'm Sophia Williams – an intrepid explorer through the lens, on a relentless quest to capture the world's boundless wonders. Join me in unraveling the extraordinary through my lens as I embark on a visual journey like no other.">
+    content="Hello there, I'm Waldimir Calzadilla – a passionate sports photographer based in Central Florida, specializing in capturing the intensity and beauty of athletic moments. With a keen eye for baseball and all sports photography, I bring every game-changing play to life through my lens.">
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="dist/assets/favicon.ico" />
   <link rel="stylesheet" href="dist/output.css" />
@@ -36,6 +36,23 @@
                     'nothingyoucoulddo': ['Nothing You Could Do', 'cursive'],
                     'signika': ['Signika', 'sans-serif'],
                   },
+                  keyframes: {
+                    'fade-in-delayed': {
+                      '0%': { opacity: '0' },
+                      '100%': { opacity: '1' },
+                    },
+                    'slide-up': {
+                      '0%': { transform: 'translateY(2rem)', opacity: '0' },
+                      '100%': { transform: 'translateY(0)', opacity: '1' },
+                    }
+                  },
+                  animation: {
+                    'fade-in-delayed': 'fade-in-delayed 1s ease-out forwards',
+                    'fade-in-delayed-3': 'fade-in-delayed 1s ease-out 1.5s forwards',
+                    'fade-in-delayed-4': 'fade-in-delayed 1s ease-out 2s forwards',
+                    'slide-up-delayed-1': 'slide-up 1s ease-out 0.5s forwards',
+                    'slide-up-delayed-2': 'slide-up 1s ease-out 1s forwards',
+                  }
                 },
       },
       plugins: [],
@@ -51,7 +68,7 @@
     <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
       <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
         <div class="mr-4 md:mr-8">
-          <a href="index.html" class="text-2xl font-signika font-bold">SOPHIA WILLIAMS</a>
+          <a href="index.html" class="text-2xl font-signika font-bold">Waldimir Calzadilla</a>
         </div>
         <div class="ml-auto md:hidden flex items-center justify-start">
           <button onclick="menuToggle()" @click="open = !open"
@@ -97,6 +114,36 @@
       </div>
     </nav>
   </header>
+  <!-- Hero Section -->
+  <div class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+      <img src="path-to-your-sports-image.jpg" 
+           alt="Sports Photography" 
+           class="w-full h-full object-cover opacity-50 dark:opacity-30"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-black"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 opacity-0 animate-fade-in-delayed">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+        <span class="block transform translate-y-8 animate-slide-up-delayed-1">WALDIMIR</span>
+        <span class="block transform translate-y-8 animate-slide-up-delayed-2">CALZADILLA</span>
+      </h1>
+      <p class="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto opacity-0 animate-fade-in-delayed-3 leading-relaxed">
+        Capturing the raw energy and decisive moments of sports through the lens. 
+        Specializing in baseball and athletic photography across Central Florida.
+      </p>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-0 animate-fade-in-delayed-4">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
   <!-- Content -->
   <div class="container mx-auto">
     <h1 class="text-4xl pt-10 pb-8 font-bold">PORTFOLIO</h1>
