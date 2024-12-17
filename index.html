@@ -63,6 +63,12 @@
                     'slide-up-delayed-1': 'slide-up 1s ease-out 0.5s forwards',
                     'slide-up-delayed-2': 'slide-up 1s ease-out 1s forwards',
                     'cursor-glow': 'cursor-glow 1s ease-out infinite',
+                  },
+                  minHeight: {
+                    screen: ['100vh', '100dvh']
+                  },
+                  height: {
+                    screen: ['100vh', '100dvh']
                   }
                 },
       },
@@ -126,14 +132,14 @@
     </nav>
   </header>
   <!-- Hero Section -->
-  <div class="relative h-screen flex items-center justify-center overflow-hidden">
+  <div class="relative min-h-screen w-full flex items-center justify-center">
     <!-- Background Image with Overlay -->
-    <div class="absolute inset-0">
+    <div class="absolute inset-0 w-full h-full">
       <img src="baseballBackground.jpg" 
-           alt="Sports Photography" 
-           class="w-full h-full object-cover opacity-50 dark:opacity-30"
+           alt="Baseball Background"
+           class="w-full h-screen object-cover opacity-50 dark:opacity-30"
       />
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-black"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white dark:to-black"></div>
     </div>
     
     <!-- Content -->
@@ -402,37 +408,6 @@
   </script>
   <script src="dist/fade_in.js"></script>
   <script src="dist/menu.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cursor = document.createElement('div');
-      cursor.className = 'fixed w-8 h-8 rounded-full pointer-events-none mix-blend-difference z-50 transition-transform duration-100 ease-out';
-      document.body.appendChild(cursor);
-
-      const cursorGlow = document.createElement('div');
-      cursorGlow.className = 'fixed w-24 h-24 rounded-full pointer-events-none bg-white/10 -translate-x-1/2 -translate-y-1/2 animate-cursor-glow';
-      document.body.appendChild(cursorGlow);
-
-      document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-      });
-
-      // Add hover effect to interactive elements
-      const interactiveElements = document.querySelectorAll('a, button, input, textarea');
-      interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          cursor.style.transform = 'scale(1.5)';
-          cursorGlow.style.transform = 'scale(1.5) translate(-33%, -33%)';
-        });
-        el.addEventListener('mouseleave', () => {
-          cursor.style.transform = 'scale(1)';
-          cursorGlow.style.transform = 'translate(-50%, -50%)';
-        });
-      });
-    });
-  </script>
 </body>
 
 </html>
