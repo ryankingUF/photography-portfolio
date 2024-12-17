@@ -10,8 +10,8 @@
     content="Hello there, I'm Waldimir Calzadilla – a passionate sports photographer based in Central Florida, specializing in capturing the intensity and beauty of athletic moments. With a keen eye for baseball and all sports photography, I bring every game-changing play to life through my lens.">
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
-  <link rel="stylesheet" href="output.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="output.css" />
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- Start - Fonts -->
@@ -125,9 +125,9 @@
     <div class="max-w-screen-xl py-16 mx-auto">
       <div class="grid grid-cols-1 gap-8 text-center mx-auto">
         <div>
-          <p class="font-signika"><b>SOPHIA WILLIAMS</b></p>
+          <p class="font-signika"><b>Waldimir Calzadilla</b></p>
           <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
-            929 Sycamore Street San Francisco CA<br />(415) 208- 2116
+            Orlando, FL<br />(407) 208- 2116
           </p>
           <div class="flex mx-auto">
             <div class="mx-auto space-x-6 flex mt-8 text-gray-600 dark:text-gray-300">
@@ -177,6 +177,15 @@
   </footer>
   <script src="fade_in.js"></script>
   <script src="menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.style.cursor = 'default';
+      const links = document.querySelectorAll('a, button');
+      links.forEach(link => {
+        link.style.cursor = 'pointer';
+      });
+    });
+  </script>
 </body>
 
 </html>
