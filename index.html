@@ -44,6 +44,16 @@
                     'slide-up': {
                       '0%': { transform: 'translateY(2rem)', opacity: '0' },
                       '100%': { transform: 'translateY(0)', opacity: '1' },
+                    },
+                    'cursor-glow': {
+                      '0%': { 
+                        transform: 'scale(1)',
+                        opacity: '0.3'
+                      },
+                      '100%': { 
+                        transform: 'scale(1.5)',
+                        opacity: '0'
+                      }
                     }
                   },
                   animation: {
@@ -52,6 +62,7 @@
                     'fade-in-delayed-4': 'fade-in-delayed 1s ease-out 2s forwards',
                     'slide-up-delayed-1': 'slide-up 1s ease-out 0.5s forwards',
                     'slide-up-delayed-2': 'slide-up 1s ease-out 1s forwards',
+                    'cursor-glow': 'cursor-glow 1s ease-out infinite',
                   }
                 },
       },
@@ -391,6 +402,37 @@
   </script>
   <script src="dist/fade_in.js"></script>
   <script src="dist/menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cursor = document.createElement('div');
+      cursor.className = 'fixed w-8 h-8 rounded-full pointer-events-none mix-blend-difference z-50 transition-transform duration-100 ease-out';
+      document.body.appendChild(cursor);
+
+      const cursorGlow = document.createElement('div');
+      cursorGlow.className = 'fixed w-24 h-24 rounded-full pointer-events-none bg-white/10 -translate-x-1/2 -translate-y-1/2 animate-cursor-glow';
+      document.body.appendChild(cursorGlow);
+
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+      });
+
+      // Add hover effect to interactive elements
+      const interactiveElements = document.querySelectorAll('a, button, input, textarea');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.transform = 'scale(1.5)';
+          cursorGlow.style.transform = 'scale(1.5) translate(-33%, -33%)';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.style.transform = 'scale(1)';
+          cursorGlow.style.transform = 'translate(-50%, -50%)';
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

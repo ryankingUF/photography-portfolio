@@ -47,6 +47,29 @@ html {
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
+  cursor: none;
+}
+
+html {
+  cursor: none;
+}
+
+a, button, input, textarea {
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  html {
+    cursor: auto;
+  }
+  
+  a, button, input, textarea {
+    cursor: auto;
+  }
+  
+  .cursor-glow {
+    display: none;
+  }
 }
 
 /*
@@ -1357,5 +1380,19 @@ video {
 
   .md\:transition-none {
     transition-property: none;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    cursor: auto;
+  }
+  
+  a, button, input, textarea {
+    cursor: auto;
+  }
+  
+  .cursor-glow {
+    display: none;
   }
 }
