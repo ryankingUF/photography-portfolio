@@ -9,8 +9,7 @@
   <meta name="description"
     content="Hello there, I'm Wladimir Calzadilla – a passionate sports photographer based in Central Florida, specializing in capturing the intensity and beauty of athletic moments. With a keen eye for baseball and all sports photography, I bring every game-changing play to life through my lens.">
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link rel="stylesheet" href="output.css" />
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -80,42 +79,83 @@
       <section class="col-span-2 md:col-span-1">
         <div class="max-w-screen-md">
           <h1 class="text-4xl pt-10 pb-8"><b>CONTACT</b></h1>
+          <p style="margin-bottom: 4rem;" class="text-gray-600 dark:text-gray-400">Ready to capture your sporting moments? Fill out the form below, and I'll get back to you within 24-48 hours.</p>
 
-          <form class="space-y-8" action="mailto:info@example.com">
+          <form class="space-y-8" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div>
-              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                email</label>
-              <input type="email" id="email"
-                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                placeholder="example@gmail.com" required />
+              <label for="name" class="block mb-3 text-base text-gray-900 dark:text-gray-300">Your Name</label>
+              <input type="text" id="name" name="name"
+                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white"
+                placeholder="John Doe" required />
             </div>
+
             <div>
-              <label for="subject"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
-              <input type="text" id="subject"
-                class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                placeholder="Let me know how I can help you" required />
+              <label for="email" class="block mb-3 text-base text-gray-900 dark:text-gray-300">Your Email</label>
+              <input type="email" id="email" name="email"
+                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white"
+                placeholder="john@example.com" required />
             </div>
-            <div class="sm:col-span-2">
-              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your
-                message</label>
-              <textarea id="message" rows="6"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder="Leave a comment..." required></textarea>
+
+            <div>
+              <label for="phone" class="block mb-3 text-base text-gray-900 dark:text-gray-300">Phone Number (Optional)</label>
+              <input type="tel" id="phone" name="phone"
+                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white"
+                placeholder="(123) 456-7890" />
             </div>
-            <button type="submit"
-              class="py-3 px-5 text-sm font-medium text-center bg-black dark:bg-white text-white dark:text-black rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-              Send message
-            </button>
+
+            <div class="mt-6">
+              <label class="block mb-4 text-base text-gray-900 dark:text-gray-300">Services Interested In</label>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <input type="checkbox" id="game_day" name="services[]" value="game_day"
+                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-neutral-900 dark:border-neutral-800" />
+                  <label for="game_day" class="ml-3 text-base text-gray-900 dark:text-gray-300">Game Day Coverage</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="tournament" name="services[]" value="tournament"
+                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-neutral-900 dark:border-neutral-800" />
+                  <label for="tournament" class="ml-3 text-base text-gray-900 dark:text-gray-300">Tournament Coverage</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="team_photos" name="services[]" value="team_photos"
+                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-neutral-900 dark:border-neutral-800" />
+                  <label for="team_photos" class="ml-3 text-base text-gray-900 dark:text-gray-300">Team Photos</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="individual" name="services[]" value="individual"
+                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-neutral-900 dark:border-neutral-800" />
+                  <label for="individual" class="ml-3 text-base text-gray-900 dark:text-gray-300">Individual Athlete Portraits</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <label for="event_date" class="block mb-3 text-base text-gray-900 dark:text-gray-300">Event Date (Optional)</label>
+              <input type="date" id="event_date" name="event_date"
+                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white" />
+            </div>
+
+            <div class="mt-6">
+              <label for="message" class="block mb-3 text-base text-gray-900 dark:text-gray-400">Message</label>
+              <textarea id="message" name="message" rows="6"
+                class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white"
+                placeholder="Tell me about your event and what you're looking for..." required></textarea>
+            </div>
+
+            <div class="flex justify-start w-full">
+              <button type="submit"
+                style="margin-top: 1rem; padding: 0.75rem 4rem; min-width: 200px;"
+                class="text-base font-medium text-white bg-black dark:bg-white dark:text-black rounded-lg transition-colors duration-300 hover:bg-gray-800 dark:hover:bg-gray-200">
+                Send Message
+              </button>
+            </div>
           </form>
         </div>
       </section>
-      <div class="col-span-2 md:col-span-1 flex relative">
-        <div
-          class="bg-white dark:bg-neutral-900 p-5 pb-20 m-6 md:m-12 shadow-lg border border-gray-100 dark:border-neutral-800  hover:rotate-0 transition duration-500 rotate-6 relative">
-          <img
-            src="https://images.unsplash.com/reserve/yZfr4jmxQyuaE132MWZm_stagnes.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2052&q=80"
-            alt="" class="flex flex-col aspect-square w-full object-cover h-auto max-h-full" />
+      <div class="col-span-2 md:col-span-1 flex items-center justify-center">
+        <div class="bg-white dark:bg-neutral-900 p-5 w-full max-w-md aspect-square m-6 md:m-12 shadow-lg border border-gray-100 dark:border-neutral-800 hover:rotate-0 transition duration-500 rotate-6 relative">
+          <img src="https://images.unsplash.com/reserve/yZfr4jmxQyuaE132MWZm_stagnes.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2052&q=80"
+            alt="" class="w-full h-full object-cover" />
         </div>
       </div>
     </div>
